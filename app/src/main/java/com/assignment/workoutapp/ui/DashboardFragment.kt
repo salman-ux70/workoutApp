@@ -37,6 +37,11 @@ class DashboardFragment : Fragment(), stepsCallback {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mActivity?.let { activity ->
+            val steps = SharedPrefsManager.getFinalSteps(activity)
+
+            val progress = (steps / 6000) * 100
+            binding.circularProgressBar.progress = progress.toFloat()
+
             binding.setWorkoutData()
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
@@ -55,7 +60,7 @@ class DashboardFragment : Fragment(), stepsCallback {
 
     override fun subscribeSteps(steps: Int) {
         binding.tvSteps.text = "$steps / 6000 \nsteps"
-        val progress = steps / 6000
+        val progress = (steps / 100f) * 100
         binding.circularProgressBar.progress = progress.toFloat()
     }
 
