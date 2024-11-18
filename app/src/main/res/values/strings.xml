@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">workout App</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="workit_app">Workit App</string>
+    <string name="workout_status">Workout Status</string>
+    <string name="workout_duration">Workout Duration :</string>
+    <string name="calories_status">Calories Status :</string>
+    <string name="you_can_do_it">You can do it</string>
+    <string name="done">Done</string>
+</resources>
